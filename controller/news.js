@@ -27,7 +27,7 @@ const newsModel = require('../models/newsModel')
     var Lname    = request.Lname;
     var Adress   = request.Adress;
     var birth    = request.birth;
-    var password = ''
+    var password = request.password;
 
     var queryParams = { Fname: Fname, Lname: Lname, Adress: Adress, birth: birth, password : password }
     const newsData = await newsModel.Registration_worker(queryParams);

@@ -41,7 +41,7 @@ const newsModel = {
 
 
    //insertion d'un employé
-   Inser_worker: async function(params) {
+   Registration_worker: async function(params) {
     const connection = await mysqlPromise.DATABASE.getConnection();
     var res = [{}];
     console.log("entrée");
