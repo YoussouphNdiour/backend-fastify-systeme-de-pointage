@@ -5,15 +5,15 @@ let news = require('../controller/news');
 
 //test ping
 async function routes (fastify, options) {
-    //fastify.register(cors)
-    fastify.get('/', function (request, reply) {
+    fastify.register(cors)
+    fastify.get('/index', function (request, reply) {
         reply.send({message: 'ping success', code: 200})
     })
 
 //////////////////////////////////////COMPANY////////////////////////////////
 
 
-//Création Registration_company 
+//Création Registration_company
 const Registration_companyBodyJsonSchema = {
   type: 'object',
   required: ['Fname','idCompany'],
@@ -26,14 +26,14 @@ const Registration_companyBodyJsonSchema = {
     adress: { type: 'string' },
   },
   }
-  
+
   const schemaRegistration_company = {
   body: Registration_companyBodyJsonSchema,
   }
   fastify.post('/Registration_company' ,{ schemaRegistration_company }, async function (request, reply) {
     console.log(request.body);
       var res = await news.Registration_company(request.body);
-      return res.length > 0 ? reply.status(200).send(res) : null;  
+      return res.length > 0 ? reply.status(200).send(res) : null;
     })
 
 
@@ -54,13 +54,13 @@ const Registration_accountBodyJsonSchema = {
     idWorker: { type: 'string' }
   },
   }
-  
+
   const schemaRegistration_account = {
   body: Registration_accountBodyJsonSchema,
   }
   fastify.post('/Registration_account' ,{ schemaRegistration_account }, async function (request, reply) {
       var res = await news.Registration_account(request.body);
-      return res.length > 0 ? reply.status(200).send(res) : null;  
+      return res.length > 0 ? reply.status(200).send(res) : null;
     })
 
 
