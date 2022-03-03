@@ -1,11 +1,11 @@
 let news = require('../controller/news');
-var cors = require('fastify-cors')
+//var cors = require('fastify-cors')
 
 
 
 //test ping
 async function routes (fastify, options) {
-    fastify.register(cors)
+    //fastify.register(cors)
     fastify.get('/', function (request, reply) {
         reply.send({message: 'ping success', code: 200})
     })
