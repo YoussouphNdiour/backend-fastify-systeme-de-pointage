@@ -4,11 +4,11 @@ require('dotenv').config();// Require the framework and instantiate it
 const fastify = require('fastify')({
     logger: true
   })
-  
+
   const routes = require('./routes')
 
   fastify.register(routes);
-  
+
   // Run the server!
   const start = async () => {
     try {
