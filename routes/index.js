@@ -1,5 +1,5 @@
 let news = require('../controller/news');
-var cors = require('fastify-cors')
+//var cors = require('fastify-cors')
 
 
 
