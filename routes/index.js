@@ -6,7 +6,7 @@ let news = require('../controller/news');
 //test ping
 async function routes (fastify, options) {
     fastify.register(cors)
-    fastify.get('/index', function (request, reply) {
+    fastify.get('/', function (request, reply) {
         reply.send({message: 'ping success', code: 200})
     })
 
